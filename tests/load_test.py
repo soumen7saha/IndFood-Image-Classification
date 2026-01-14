@@ -11,7 +11,7 @@ request_data = {
 
 def send_request(_):
     try:
-        response = requests.post(url, json=request_data, timeout=5)
+        response = requests.post(url, json=request_data, timeout=50)
         return response.status_code
     except Exception as e:
         return f"Error: {e}"

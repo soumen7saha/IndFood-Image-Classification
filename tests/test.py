@@ -3,7 +3,7 @@ import json
 
 url = 'http://localhost:9696/predict_food'
 request = {
-    "img_url": "data/test/bhindi_masala.jpg",
+    "img_url": "src/images/masala_dosa.jpg",
     "model": "resnet"
 }
 
