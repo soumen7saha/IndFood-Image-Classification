@@ -7,8 +7,8 @@ from src.scripts.model import *
 
 
 class FoodModel(BaseModel):
-    img_url: Path = Field(..., json_schema_extra={"examples": ["data/test/biryani.jpg"]})
-    model: str = Field(..., json_schema_extra={"examples": ["resnet", "convns"]})
+    img_url: Path = Field(..., json_schema_extra={"examples": ["src/images/masala_dosa.jpg"]})
+    model: str = Field(..., json_schema_extra={"examples": ["convns", "resnet"]})
 
 
 class ClassResponse(BaseModel):

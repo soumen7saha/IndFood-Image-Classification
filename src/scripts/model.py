@@ -130,6 +130,3 @@ def convns(img_file):
     
     return {'t1_class': t1_class, 't5_preds': t5_preds}
     
-
-# print(resnet('misti_doi.jpg'))
-# print(convns('misti_doi.jpg'))

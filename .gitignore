@@ -2,3 +2,4 @@
 .ipynb_checkpoints
 ps.txt
 notes.txt
+__pycache__
