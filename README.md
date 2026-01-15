@@ -16,6 +16,8 @@ The dataset consists of around 135,335 images and 131 food items (classes). The 
 - Hierarchial Sunburst
 ![](/images/food_hier_sunburst.png)
 
+Data augmentation used ...
+
 ## Model Training & Metrics
 
 
@@ -134,7 +136,7 @@ The dataset consists of around 135,335 images and 131 food items (classes). The 
 
 
 ## Architecture Diagram
-
+![](/images/arch_diag.png)
 
 ## Known Limitations & Next Steps
 
