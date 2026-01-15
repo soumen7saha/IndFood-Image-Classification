@@ -20,7 +20,7 @@ The dataset consists of around 135,335 images and 131 food items (classes). The 
     
         git clone https://github.com/soumen7saha/IndFood-Image-Classification.git
 
-- Make sure you have the python version specified in [pyproject.toml](https://github.com/soumen7saha/IndFood-Image-Classification/blob/main/pyproject.toml)/[.python-version](https://github.com/soumen7saha/IndFood-Image-Classification/blob/main/.python-version) and pip (pip installs packages) in the local system
+- Make sure you have the python version specified in [pyproject.toml](https://github.com/soumen7saha/IndFood-Image-Classification/blob/main/pyproject.toml) or [.python-version](https://github.com/soumen7saha/IndFood-Image-Classification/blob/main/.python-version) file and pip (pip installs packages) in the local system
 
 - Install uv using pip
 
