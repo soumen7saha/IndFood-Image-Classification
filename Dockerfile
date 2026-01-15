@@ -28,5 +28,5 @@ EXPOSE 9696
 ENTRYPOINT ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "9696"]
 
 # cat Dockerfile
-# docker build -f dockerfiles/aws.Dockerfile -t indfood-imgclassification:v3 .
+# docker build -t indfood-imgclassification:v3 .
 # docker run -it --rm -p 9696:9696 indfood-imgclassification:v3
