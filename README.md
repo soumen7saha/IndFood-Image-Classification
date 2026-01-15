@@ -10,7 +10,7 @@ The dataset consists of around 135,335 images and 131 food items (classes). The 
 - Categories
 ![](/images/food_categories.png)
 
-- Distribution
+- Class Distribution
 ![](/images/food_distribution.png)
 
 - Hierarchial Sunburst
