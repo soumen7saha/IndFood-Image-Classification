@@ -16,7 +16,7 @@ class ClassResponse(BaseModel):
     t5_preds: dict
 
 
-app = FastAPI(title="indfood-prediction", debug=True)
+app = FastAPI(title="indfood-prediction")
 
 @app.get("/health")
 def health():
