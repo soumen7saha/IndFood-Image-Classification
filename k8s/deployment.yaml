@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: indfood-imgclassification
-        image: indfood-imgclassification:v2
+        image: indfood-imgclassification:v3
         imagePullPolicy: Never
         ports:
         - containerPort: 9696

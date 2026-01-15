@@ -51,7 +51,13 @@ class FoodClassifierResNet(nn.Module):
         super(FoodClassifierResNet, self).__init__()
 
         # load pre-trained ResNet-152
-        self.base_model = models.resnet152(weights='IMAGENET1K_V2')
+        # self.base_model = models.resnet152(weights='IMAGENET1K_V2')
+        self.base_model = models.resnet152(weights=None)
+        checkpoint = torch.load('models/resnet152.pth', map_location=device)
+        if 'state_dict' in checkpoint:
+            self.base_model.load_state_dict(checkpoint['state_dict'])
+        else:
+            self.base_model.load_state_dict(checkpoint)
 
         # Freeze all base model parameters initially
         for param in self.base_model.parameters():
@@ -129,4 +135,4 @@ def convns(img_file):
     t1_class = max(t5_preds, key=t5_preds.get)
     
     return {'t1_class': t1_class, 't5_preds': t5_preds}
-    
+ 

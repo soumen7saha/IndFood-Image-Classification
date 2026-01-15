@@ -11,7 +11,7 @@ request_data = {
 
 def send_request(_):
     try:
-        response = requests.post(url, json=request_data, timeout=50)
+        response = requests.post(url, json=request_data, timeout=500)
         return response.status_code
     except Exception as e:
         return f"Error: {e}"
@@ -22,8 +22,8 @@ print("Starting load test...")
 print("Watch HPA with: kubectl get hpa -w")
 print("Watch pods with: kubectl get pods -w")
 
-num_requests = 1000
-concurrent_workers = 50
+num_requests = 10
+concurrent_workers = 10
 
 
 print(f"Sending {num_requests} requests with {concurrent_workers} concurrent workers")

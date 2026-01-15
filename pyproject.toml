@@ -13,3 +13,8 @@ dependencies = [
     "torchvision>=0.24.1",
     "uvicorn>=0.40.0",
 ]
+
+[dependency-groups]
+dev = [
+    "torchsummary>=1.5.1",
+]
