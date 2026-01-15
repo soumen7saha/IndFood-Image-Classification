@@ -95,7 +95,7 @@ The dataset consists of around 135,335 images and 131 food items (classes). The 
 ![](/images/1.png)
 
 - Food Class Output
-![](/images/3.png)
+![](/images/2.png)
 
 ## K8S Deployment
 
