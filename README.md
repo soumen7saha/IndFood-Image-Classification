@@ -17,12 +17,57 @@ The dataset consists of around 135,335 images and 131 food items (classes). The 
 ![](/images/food_hier_sunburst.png)
 
 Data augmentation used ...
+add other data preparation notebooks...
 
 ## Model Training & Metrics
 
 
 ## Project Folder Structure
-
+```
+└── 📁IndFood-Image-Classification
+    └── 📁.venv
+        └── 📁bin
+            ├── activate
+    └── 📁data
+        └── 📁test
+        └── 📁train
+        └── 📁val
+    └── 📁images
+    └── 📁k8s
+        ├── deployment.yaml
+        ├── hpa.yaml
+        ├── service.yaml
+    └── 📁models
+        ├── food_classifier_convnexts_v2.onnx
+        ├── food_classifier_convnexts_v2.onnx.data
+        ├── food_resnet_v42_12_0.887.pth
+        ├── resnet152.pth
+    └── 📁notebooks
+        ├── Model Testing.ipynb
+        ├── Model Training ConvNeXT-S.ipynb
+        ├── Model Training ResNet152.ipynb
+    └── 📁src
+        └── 📁images
+            ├── masala_dosa.jpg
+        └── 📁scripts
+            ├── model.py
+            ├── predict.py
+            ├── serve.py
+            ├── train.py
+    └── 📁static
+        └── 📁uploads
+    └── 📁templates
+        ├── index.html
+    └── 📁tests
+        ├── load_test.py
+        ├── test.py
+    ├── .python-version
+    ├── app.py
+    ├── Dockerfile
+    ├── pyproject.toml
+    ├── requirements.txt
+    └── uv.lock
+```
 
 ## How to run locally?
 - Clone the Project from git
