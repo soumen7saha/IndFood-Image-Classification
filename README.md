@@ -9,17 +9,43 @@ The dataset consists of around 135,335 images and 131 food items (classes). The 
 ## Dataset Analysis
 
 
-## Modelling Training & Metrics
+## Model Training & Metrics
 
 
 ## Project Folder Structure
 
 
 ## How to run locally?
+- Clone the Project from git
+    
+        git clone https://github.com/soumen7saha/IndFood-Image-Classification.git
 
+- Make sure you have the python version specified in [pyproject.toml](https://github.com/soumen7saha/IndFood-Image-Classification/blob/main/pyproject.toml)/[.python-version](https://github.com/soumen7saha/IndFood-Image-Classification/blob/main/.python-version) and pip (pip installs packages) in the local system
+
+- Install uv using pip
+
+        pip install uv
+
+- Go to the project directory, open terminal & run
+
+        uv sync
+
+- Activate the uv environment
+    
+        source .venv/bin/activate
+
+- Make sure the port _9696_ is not allocated to any process
+    
+- Run
+    
+        uv run python app.py
 
 ## How to run via Docker?
+- Go to the project directory in terminal and run the following commands:
 
+        cat Dockerfile
+	    docker build -t indfood-imgclassification .
+	    docker run -it --rm -p 9696:9696 indfood-imgclassification
 
 ## API Usage Examples
 - Move to the project directory and open terminal
