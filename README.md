@@ -4,10 +4,17 @@
 The rapid growth of digital technologies in the food industry has increased the demand for automated systems capable of accurately identifying food items from images. Manual food recognition and labeling are time-consuming, inconsistent and unsuitable for large-scale applications. Additionally, food images exhibit high variability in appearance due to differences in presentation, ingredients and, cultural or regional preparation styles. This project explores the potential of the Convolutional Neural Network(CNN) in identifying the food from the image samples. This aims to predict the name of the food item or dish or meal taken mainly in the Indian subcontinent region using the pre-trained model trained on images of food samples collected from various data sources. It supports data-driven decision-making, highlighting the need for dietary assessment, health management, and enhancing several food service applications.
 
 ## Dataset Description
-The dataset consists of around 135,335 images and 131 food items (classes). The images of food items belong to different food categories: sweet, curry, snacks, bread, cereal, beverage, pizza and kebab. The whole dataset is constructed from the two resources and split into train & val in an 85%-15% proportion. It can be accessed from this [link](https://github.com/soumen7saha/IndFood-Dataset).
+The dataset consists of around 135,335 images and 131 food items (classes). The images of food items belong to different food categories: sweet, curry, snacks, bread, cereal, beverage, pizza and kebab. The whole dataset is constructed from two open resources and split into train & val in an 85%-15% proportion. It can be accessed from this [link](https://github.com/soumen7saha/IndFood-Dataset).
 
 ## Dataset Analysis
+- Categories
+![](/images/food_categories.png)
 
+- Distribution
+![](/images/food_distribution.png)
+
+- Hierarchial Sunburst
+![](/images/food_hier_sunburst.png)
 
 ## Model Training & Metrics
 
