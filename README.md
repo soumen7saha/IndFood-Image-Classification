@@ -17,7 +17,7 @@ The dataset consists of around 135,335 images and 131 food items (classes). The 
 - Hierarchial Sunburst
 ![](/images/food_hier_sunburst.png)
 
-As the dataset is imbalanced and biased towards several food classes, a new balanced dataset with 25000 training samples and 6000 validation samples, is achieved through data augmentation techniques to feed into the CNN model for training.
+As the dataset is imbalanced and biased towards several food classes, a new balanced dataset with 25,000 training samples and 6,000 validation samples, is achieved through data augmentation techniques to feed into the CNN model for training.
 
 ## Model Training & Metrics
 | Model | Hyperparameters | Top-1 Val Accuracy | Checkpoint | Test Accuracy |
@@ -115,8 +115,8 @@ Different pre-trained CNN models are trained using PyTorch and evaluated on the 
 - Go to the project directory in terminal and run the following commands:
 
         cat Dockerfile
-	docker build -t indfood-imgclassification:v3 .
-	docker run -it --rm -p 9696:9696 indfood-imgclassification:v3
+        docker build -t indfood-imgclassification:v3 .
+        docker run -it --rm -p 9696:9696 indfood-imgclassification:v3
 
 ## API Usage Examples
 - Move to the project directory and open terminal
