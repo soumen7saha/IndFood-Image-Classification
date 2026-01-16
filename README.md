@@ -27,7 +27,7 @@ As the dataset is imbalanced and biased towards several food classes, a new bala
 | ConvNeXT-S | epochs=50, learning_rate=0.001, size_inner=1000, droprate=0.3 | 83.8% | [food_cnext_v33_38_0.838.pth](https://github.com/soumen7saha/IndFood-Image-Classification/blob/main/models/food_cnext_v33_38_0.838.pth) | 68.97% |
 | ResNet-152 | epochs=15, learning_rate=0.001, unfrozen_layers=2 | 88.7% | [food_resnet_v42_12_0.887.pth](https://github.com/soumen7saha/IndFood-Image-Classification/blob/main/models/food_resnet_v42_12_0.887.pth) | 79.31% | 
 
-Different pre-trained CNN models are trained using PyTorch and evaluated on the basis of accuracy and their performance on the validation set. The model with the maximum test/val accuracy is selected as the final best model and exported to the [models](https://github.com/soumen7saha/IndFood-Image-Classification/tree/main/models) sub-folder.
+Different pre-trained CNN models are trained using PyTorch and evaluated on the basis of accuracy and their performance on the validation set. The top two models with the maximum test/val accuracy are selected to deploy in the application and exported to the [models](https://github.com/soumen7saha/IndFood-Image-Classification/tree/main/models) sub-folder.
 
 ## Project Folder Structure
 ```
@@ -70,6 +70,7 @@ Different pre-trained CNN models are trained using PyTorch and evaluated on the 
         ├── test.py
     ├── .python-version
     ├── app.py
+    ├── main.py
     ├── Dockerfile
     ├── pyproject.toml
     ├── requirements.txt
