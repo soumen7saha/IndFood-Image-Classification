@@ -263,7 +263,7 @@ Different pre-trained CNN models are trained using PyTorch and evaluated on the 
 To deploy in the streamlit cloud, add the git repository link and the entry file ([main.py](https://github.com/soumen7saha/IndFood-Image-Classification/blob/main/main.py)). You will be provided with the public URL - https://indfood-image-classification.streamlit.app/ 
 
 A demo video of the streamlit application is provided (here)[https://github.com/soumen7saha/IndFood-Image-Classification/blob/main/images/demo_ific.webm]:
-
+[demo_ific.webm](https://github.com/user-attachments/assets/d69c1370-0a22-46b6-bb17-5f1f137ba62a)
 
 ## Architecture Diagram
 ![](/images/arch_diag.png)
