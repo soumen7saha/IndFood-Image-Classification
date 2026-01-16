@@ -8,7 +8,7 @@ COPY ./models/food_classifier_convnexts_v2.onnx.data /app/models/
 COPY ./models/food_resnet_v42_12_0.887.pth /app/models/
 COPY ./models/resnet152.pth /app/models/
 COPY ./templates /app/templates
-COPY ./static /app/static
+# COPY ./static /app/static
 
 WORKDIR /app
 
@@ -29,4 +29,5 @@ ENTRYPOINT ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "9696"]
 
 # cat Dockerfile
 # docker build -t indfood-imgclassification:v3 .
+
 # docker run -it --rm -p 9696:9696 indfood-imgclassification:v3
