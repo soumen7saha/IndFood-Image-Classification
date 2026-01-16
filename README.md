@@ -81,6 +81,7 @@ Different pre-trained CNN models are trained using PyTorch and evaluated on the 
 - notebooks : contains the notebook files used to trian and test the models
 - src/scripts : contains the python scripts file segragated from the notebook 
 - app.py : entry point to run the project
+- main.py : entry point to run the integrated streamlit application
 - uv.lock : used to install all the specified packages into the project's virtual environment
 - Dockerfile : used to build the docker container
 - k8s : contains kubernetes related yaml files
@@ -261,8 +262,8 @@ Different pre-trained CNN models are trained using PyTorch and evaluated on the 
 ## Streamlit Cloud Deployment
 To deploy in the streamlit cloud, add the git repository link and the entry file ([main.py](https://github.com/soumen7saha/IndFood-Image-Classification/blob/main/main.py)). You will be provided with the public URL - https://indfood-image-classification.streamlit.app/ 
 
-A demo video of the streamlit application is provided here:
-![](/images/demo_ific.webm)
+A demo video of the streamlit application is provided (here)[https://github.com/soumen7saha/IndFood-Image-Classification/blob/main/images/demo_ific.webm]:
+
 
 ## Architecture Diagram
 ![](/images/arch_diag.png)
