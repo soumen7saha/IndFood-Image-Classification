@@ -16,5 +16,8 @@ dependencies = [
 
 [dependency-groups]
 dev = [
+    "matplotlib>=3.10.8",
+    "pandas>=2.3.3",
+    "plotly>=6.5.2",
     "torchsummary>=1.5.1",
 ]
