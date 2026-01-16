@@ -22,10 +22,10 @@ add other data preparation notebooks...
 ## Model Training & Metrics
 | Model | Hyperparameters | Top-1 Val Accuracy | Checkpoint | Test Accuracy |
 | --- | --- | --- | --- | --- |
-| MobileNetV2 | epochs=50, learning_rate=0.001, size_inner=1000, droprate=0.4 | 62.3% | [food_mobilenet_v12_19_0.623.pth]() | 37.93% |
-| EfficientNet-V2-S | epochs=40, learning_rate=0.001, size_inner=500, droprate=0.3 | 70.7% | [food_effnet_v23_40_0.707.pth]() | 55.17% |
-| ConvNeXT-S | epochs=50, learning_rate=0.001, size_inner=1000, droprate=0.3 | 83.8% | [food_cnext_v33_38_0.838.pth]() | 68.97% |
-| ResNet-152 | epochs=15, learning_rate=0.001, unfrozen_layers=2 | 88.7% | [food_resnet_v42_12_0.887.pth]() | 79.31% | 
+| MobileNetV2 | epochs=50, learning_rate=0.001, size_inner=1000, droprate=0.4 | 62.3% | [food_mobilenet_v12_19_0.623.pth](https://github.com/soumen7saha/IndFood-Image-Classification/blob/main/models/food_mobilenet_v12_19_0.623.pth) | 37.93% |
+| EfficientNet-V2-S | epochs=40, learning_rate=0.001, size_inner=500, droprate=0.3 | 70.7% | [food_effnet_v23_40_0.707.pth](https://github.com/soumen7saha/IndFood-Image-Classification/blob/main/models/food_effnet_v23_40_0.707.pth) | 55.17% |
+| ConvNeXT-S | epochs=50, learning_rate=0.001, size_inner=1000, droprate=0.3 | 83.8% | [food_cnext_v33_38_0.838.pth](https://github.com/soumen7saha/IndFood-Image-Classification/blob/main/models/food_cnext_v33_38_0.838.pth) | 68.97% |
+| ResNet-152 | epochs=15, learning_rate=0.001, unfrozen_layers=2 | 88.7% | [food_resnet_v42_12_0.887.pth](https://github.com/soumen7saha/IndFood-Image-Classification/blob/main/models/food_resnet_v42_12_0.887.pth) | 79.31% | 
 
 ## Project Folder Structure
 ```
