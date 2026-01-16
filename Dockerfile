@@ -16,12 +16,12 @@ ENV PATH="/app/.venv/bin:$PATH"
 
 COPY .python-version pyproject.toml uv.lock ./
 
-RUN uv sync --locked
+RUN uv sync --no-group dev --no-group frontend --locked
 
 COPY app.py ./
 # COPY main.py src/scripts/predict.py models/model.bin ./
 
-RUN uv sync --frozen
+RUN uv sync --no-group dev --no-group frontend --frozen
 
 EXPOSE 9696
 

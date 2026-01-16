@@ -21,3 +21,6 @@ dev = [
     "plotly>=6.5.2",
     "torchsummary>=1.5.1",
 ]
+frontend = [
+    "streamlit>=1.53.0",
+]
