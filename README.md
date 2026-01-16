@@ -20,7 +20,12 @@ Data augmentation used ...
 add other data preparation notebooks...
 
 ## Model Training & Metrics
-
+| Model | Hyperparameters | Top-1 Val Accuracy | Checkpoint | Test Accuracy |
+| --- | --- | --- | --- | --- |
+| MobileNetV2 | epochs=50, learning_rate=0.001, size_inner=1000, droprate=0.4 | 62.3% | [food_mobilenet_v12_19_0.623.pth]() | 37.93% |
+| EfficientNet-V2-S | epochs=40, learning_rate=0.001, size_inner=500, droprate=0.3 | 70.7% | [food_effnet_v23_40_0.707.pth]() | 55.17% |
+| ConvNeXT-S | epochs=50, learning_rate=0.001, size_inner=1000, droprate=0.3 | 83.8% | [food_cnext_v33_38_0.838.pth]() | 68.97% |
+| ResNet-152 | epochs=15, learning_rate=0.001, unfrozen_layers=2 | 88.7% | [food_resnet_v42_12_0.887.pth]() | 79.31% | 
 
 ## Project Folder Structure
 ```
@@ -68,6 +73,16 @@ add other data preparation notebooks...
     ├── requirements.txt
     └── uv.lock
 ```
+- .venv : manages the project's isolated virtual environment
+- data : stores the dataset files and links
+- models/model : stores the exported model files
+- notebooks : contains the notebook files used to trian and test the models
+- src/scripts : contains the python scripts file segragated from the notebook 
+- app.py : entry point to run the project
+- uv.lock : used to install all the specified packages into the project's virtual environment
+- Dockerfile : used to build the docker container
+- k8s : contains kubernetes related yaml files
+- tests : stores python script file to test the API endpoints and load balancing
 
 ## How to run locally?
 - Clone the Project from git
