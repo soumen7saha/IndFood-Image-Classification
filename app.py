@@ -9,10 +9,10 @@ import uvicorn
 from src.scripts.predict import *
 
 app = FastAPI(title="IndFood Classification")
-app.mount("/static", StaticFiles(directory='static'), name="static")
 UPLOAD_DIR = "static/uploads"
 UPLOAD_FILE: str = ''
 os.makedirs(UPLOAD_DIR, exist_ok=True)
+app.mount("/static", StaticFiles(directory='static'), name="static")
 templates = Jinja2Templates(directory="templates")
 
 @app.get("/", response_class=HTMLResponse)
