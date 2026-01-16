@@ -195,40 +195,40 @@ Different pre-trained CNN models are trained using PyTorch and evaluated on the 
 ![](/images/2.png)
 
 ## K8S Deployment
-- goto the k8s directory
+- Goto the k8s directory
 
         cd k8s
 
-- create a cluster with name _indfoodic_
+- Create a cluster with name _indfoodic_
 
         kind create cluster --name indfoodic
         kubectl cluster-info
 
-- check if the node is ready, you should see one node in "Ready" status.
+- Check if the node is ready, you should see one node in "Ready" status.
 
         kubectl get nodes
 
-- load image to kind
+- Load image to kind
 
         kind load docker-image indfood-imgclassification:v3 --name indfoodic
 
-- apply deployment.yaml & check the deployments and pods
+- Apply deployment.yaml & check the deployments and pods
 
         kubectl apply -f deployment.yaml
         kubectl get deployments
         kubectl get pods
 
-- check the deployment information
+- Check the deployment information
 
         kubectl describe deployment indfood-imgclassification
 
-- create the service & check the service information
+- Create the service & check the service information
 
         kubectl apply -f service.yaml
         kubectl get services
         kubectl describe service indfood-imgclassification
 
-- view logs & make test api call
+- View logs & make test api call
 
         kubectl logs -l app=indfood-imgclassification --tail=20
         curl http://localhost:30080/health
