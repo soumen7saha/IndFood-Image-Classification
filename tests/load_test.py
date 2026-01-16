@@ -3,6 +3,7 @@ import requests
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 url = 'http://localhost:30080/predict_food'
+url1 = 'http://localhost:30080/health'
 
 request_data = {
   "img_url": "src/images/masala_dosa.jpg",
@@ -11,10 +12,16 @@ request_data = {
 
 def send_request(_):
     try:
-        response = requests.post(url, json=request_data, timeout=500)
+        response = requests.get(url, timeout=10)
         return response.status_code
     except Exception as e:
         return f"Error: {e}"
+# def send_request(_):
+#     try:
+#         response = requests.post(url, json=request_data, timeout=10)
+#         return response.status_code
+#     except Exception as e:
+#         return f"Error: {e}"
 
 
 print("Starting load test...")
@@ -22,7 +29,7 @@ print("Starting load test...")
 print("Watch HPA with: kubectl get hpa -w")
 print("Watch pods with: kubectl get pods -w")
 
-num_requests = 10
+num_requests = 1000
 concurrent_workers = 10
 
 

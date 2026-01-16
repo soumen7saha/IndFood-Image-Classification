@@ -4,6 +4,7 @@
 The rapid growth of digital technologies in the food industry has increased the demand for automated systems capable of accurately identifying food items from images. Manual food recognition and labeling are time-consuming, inconsistent and unsuitable for large-scale applications. Additionally, food images exhibit high variability in appearance due to differences in presentation, ingredients and, cultural or regional preparation styles. This project explores the potential of the Convolutional Neural Network(CNN) in identifying the food from the image samples. This aims to predict the name of the food item or dish or meal taken mainly in the Indian subcontinent region using the pre-trained model trained on images of food samples collected from various data sources. It supports data-driven decision-making, highlighting the need for dietary assessment, health management, and enhancing several food service applications.
 
 ## Dataset Description
+![](/images/indfood_collage.jpg)
 The dataset consists of around 135,335 images and 131 food items (classes). The images of food items belong to different food categories: sweet, curry, snacks, bread, cereal, beverage, pizza and kebab. The whole dataset is constructed from two open resources and split into train & val in an 85%-15% proportion. It can be accessed from this [link](https://github.com/soumen7saha/IndFood-Dataset).
 
 ## Dataset Analysis
@@ -16,8 +17,7 @@ The dataset consists of around 135,335 images and 131 food items (classes). The 
 - Hierarchial Sunburst
 ![](/images/food_hier_sunburst.png)
 
-Data augmentation used ...
-add other data preparation notebooks...
+As the dataset is imbalanced and biased towards several food classes, a new balanced dataset with 25000 training samples and 6000 validation samples, is achieved through data augmentation techniques to feed into the CNN model for training.
 
 ## Model Training & Metrics
 | Model | Hyperparameters | Top-1 Val Accuracy | Checkpoint | Test Accuracy |
@@ -26,6 +26,8 @@ add other data preparation notebooks...
 | EfficientNet-V2-S | epochs=40, learning_rate=0.001, size_inner=500, droprate=0.3 | 70.7% | [food_effnet_v23_40_0.707.pth](https://github.com/soumen7saha/IndFood-Image-Classification/blob/main/models/food_effnet_v23_40_0.707.pth) | 55.17% |
 | ConvNeXT-S | epochs=50, learning_rate=0.001, size_inner=1000, droprate=0.3 | 83.8% | [food_cnext_v33_38_0.838.pth](https://github.com/soumen7saha/IndFood-Image-Classification/blob/main/models/food_cnext_v33_38_0.838.pth) | 68.97% |
 | ResNet-152 | epochs=15, learning_rate=0.001, unfrozen_layers=2 | 88.7% | [food_resnet_v42_12_0.887.pth](https://github.com/soumen7saha/IndFood-Image-Classification/blob/main/models/food_resnet_v42_12_0.887.pth) | 79.31% | 
+
+Different pre-trained CNN models are trained using PyTorch and evaluated on the basis of accuracy and their performance on the validation set. The model with the maximum test/val accuracy is selected as the final best model and exported to the [models](https://github.com/soumen7saha/IndFood-Image-Classification/tree/main/models) sub-folder.
 
 ## Project Folder Structure
 ```
@@ -113,8 +115,8 @@ add other data preparation notebooks...
 - Go to the project directory in terminal and run the following commands:
 
         cat Dockerfile
-	    docker build -t indfood-imgclassification .
-	    docker run -it --rm -p 9696:9696 indfood-imgclassification
+	docker build -t indfood-imgclassification:v3 .
+	docker run -it --rm -p 9696:9696 indfood-imgclassification:v3
 
 ## API Usage Examples
 - Move to the project directory and open terminal
@@ -193,10 +195,71 @@ add other data preparation notebooks...
 ![](/images/2.png)
 
 ## K8S Deployment
+- goto the k8s directory
 
+        cd k8s
+
+- create a cluster with name _indfoodic_
+
+        kind create cluster --name indfoodic
+        kubectl cluster-info
+
+- check if the node is ready, you should see one node in "Ready" status.
+
+        kubectl get nodes
+
+- load image to kind
+
+        kind load docker-image indfood-imgclassification:v3 --name indfoodic
+
+- apply deployment.yaml & check the deployments and pods
+
+        kubectl apply -f deployment.yaml
+        kubectl get deployments
+        kubectl get pods
+
+- check the deployment information
+
+        kubectl describe deployment indfood-imgclassification
+
+- create the service & check the service information
+
+        kubectl apply -f service.yaml
+        kubectl get services
+        kubectl describe service indfood-imgclassification
+
+- view logs & make test api call
+
+        kubectl logs -l app=indfood-imgclassification --tail=20
+        curl http://localhost:30080/health
+
+- Testing the Deployed Service
+
+        kubectl port-forward service/indfood-imgclassification 30080:9696
+
+- Testing Autoscaling
+
+        kubectl apply -f hpa.yaml
+        kubectl get hpa
+        kubectl describe hpa indfood-imgclassification-hpa
+
+        cd tests
+        uv run python load_test.py
+
+        # command output
+        Starting load test...
+        Watch HPA with: kubectl get hpa -w
+        Watch pods with: kubectl get pods -w
+        Sending 1000 requests with 50 concurrent workers
+
+        Load test complete!
+        Duration: 1.83 seconds
+        Requests per second: 547.43
+        Successful requests: 1000
+        Failed requests: 0
 
 ## Architecture Diagram
 ![](/images/arch_diag.png)
 
 ## Known Limitations & Next Steps
-
+The constructed dataset suffers from class imbalance with several food categories underrepresented that leads to potential bias. The resnet-152 model, even though it gave an accuracy of 88%, is trained for lesser epochs (15) and on a smaller balanced dataset with 25,000 samples due to resource constraints. These challenges could be addressed in subsequent research, potentially through the application of alternative models like vision transformers or multi-modal LLMs. The current application could be integrated with modern frontend frameworks like ReactJS and deployed in the public cloud.
