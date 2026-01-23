@@ -36,7 +36,7 @@ if model_rb:
 btn = st.button('Classify Food')
 if model_rb and file_location and btn:
     result = predict(FoodModel(img_url=file_location, model=model)).__dict__
-    st.success(f'Uploaded food is ***{result['t1_class']}***')
+    st.success(f'Uploaded food is ***{result["t1_class"]}***')
     st.write('\n**Top 5 Predicted Classes:**')
     c = 1
     for i in result['t5_preds']:
